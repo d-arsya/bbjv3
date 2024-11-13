@@ -14,17 +14,18 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('email');
             $table->string('password');
-            $table->rememberToken();
+            $table->enum('faculty',[
+                "Biologi", "Ekonomi Bisnis", "Filsafat", "Fisipol", "Geografi", 
+                "Hukum", "Ilmu Budaya", "Kedokteran", "Kedokteran Gigi", 
+                "Kedokteran Hewan", "Kehutanan", "MIPA", "Pascasarjana", 
+                "Pertanian", "Peternakan", "Psikologi", "Teknologi Pertanian", 
+                "Vokasi","Lainnya","Kontributor"
+              ]
+              );
+            $table->enum('role',['super']);
             $table->timestamps();
-        });
-
-        Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
         });
 
         Schema::create('sessions', function (Blueprint $table) {
