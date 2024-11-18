@@ -11,6 +11,7 @@ Route::fallback(function () {
     return view('pages.coming');
 });
 Route::redirect('/home','/donation');
+Route::redirect('/','https://berbagibitesjogja.site');
 
 Route::controller(VolunteerController::class)->group(function(){
     Route::get('login','login')->name('login');
