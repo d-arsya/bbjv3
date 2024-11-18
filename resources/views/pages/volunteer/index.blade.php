@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('container')
 @auth
-<a href="{{ route('volunteer.create') }}" class="bg-lime-500 hover:bg-lime-700 px-4 py-1 text-white rounded-md shadow-md">
+<a href="{{ route('volunteer.create') }}" class="bg-lime-500 hover:bg-lime-700 px-4 py-1 text-white rounded-md shadow-md mr-3">
     + Tambah
 </a>
 <a href="{{ route('logout') }}" class="bg-red-500 hover:bg-red-700 px-4 py-1 text-white rounded-md shadow-md">
@@ -38,7 +38,7 @@
                     {{ $item->faculty }}
                 </td>
                 <td class="px-6 py-4 hidden sm:table-cell">
-                    Poin
+                    {{ $item->point }}
                 </td>
             </tr>
                 

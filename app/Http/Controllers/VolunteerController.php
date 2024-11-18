@@ -46,7 +46,7 @@ class VolunteerController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect("/");
+        return redirect("https://berbagibitesjogja.site");
     }
     public function authenticate(Request $request){
         $ceredentials = $request->validate([

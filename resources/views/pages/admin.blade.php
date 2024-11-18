@@ -5,9 +5,9 @@
 @section('container')
     
 <div class="max-w-lg mx-auto px-8 mt-6">
-    <div class="pt-12 h-screen bg-navy">
+    <div class="pt-12 h-screen">
         {{-- ada  --}}
-        <h1 class="text-center text-4xl font-bold text-white">Heroes</h1>
+        <h1 class="text-center text-4xl font-bold text-navy">Heroes</h1>
         <div class="w-full rounded-lg bg-tosca mt-8 py-5 px-6">
             <h1 class="text-2xl text-white font-semibold text-center">Let's Rescue</h1>
             <form action="{{ route('volunteer.authenticate') }}" method="POST">

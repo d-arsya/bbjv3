@@ -16,7 +16,7 @@ class HeroController extends Controller implements HasMiddleware
     {
         return [
             new Middleware('guest', only: ['create','cancel']),
-            new Middleware('auth', only: ['backups','contributor','show','update','restore','destroy','faculty']),
+            new Middleware('auth', only: ['index','backups','contributor','show','update','restore','destroy','faculty']),
         ];
     }
 
