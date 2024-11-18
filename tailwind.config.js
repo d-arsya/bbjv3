@@ -10,6 +10,9 @@ export default {
         'sans': ['Outfit', 'sans-serif'],
       },
       extend: {
+        boxShadow:{
+          'sidebar': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+        },
         colors: {
           lime: {
             DEFAULT: '#F4FFC3',

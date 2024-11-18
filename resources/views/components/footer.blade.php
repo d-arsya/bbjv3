@@ -1,8 +1,8 @@
-<footer class="bg-tosca px-44 pt-20 pb-3">
+<footer class="bg-tosca md:px-44 px-6 pt-10 md:pt-20 pb-5">
     <div>
-        <img src="{{ asset('assets/lebar.png') }}" class="h-28" alt="">
+        <img src="{{ asset('assets/lebar.png') }}" class="h-24 md:h-28" alt="">
     </div>
-    <div class="w-3/5 text-white text-xl">
+    <div class="w-full md:w-3/5 text-white text-xl">
         <h1 class="my-10">Pusat Studi Pancasila UGM</h1>
         <p>Blk. A, Jl. Podocarpus II Bulaksumur, Sagan, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
     </div>
