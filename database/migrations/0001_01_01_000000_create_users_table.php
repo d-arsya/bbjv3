@@ -25,6 +25,7 @@ return new class extends Migration
               ]
               );
             $table->enum('role',['super']);
+            $table->integer('point');
             $table->timestamps();
         });
 
