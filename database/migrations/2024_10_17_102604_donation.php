@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('maps');
             $table->text('notes')->nullable();
+            // $table->json('jatah');
             $table->enum('status',["aktif","selesai"]);
             $table->timestamps();
         });

@@ -11,7 +11,7 @@
 </head>
 <body>
     @include('components.header')
-    <main class="md:px-44 md:py-10">
+    <main class="md:px-44 px-6 py-10">
         @yield('container')
 
     </main>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Donation;
+use App\Models\Faculty;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,14 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone')->nullable();
-            $table->enum('faculty',[
-                "Biologi", "Ekonomi Bisnis", "Filsafat", "Fisipol", "Geografi", 
-                "Hukum", "Ilmu Budaya", "Kedokteran", "Kedokteran Gigi", 
-                "Kedokteran Hewan", "Kehutanan", "MIPA", "Pascasarjana", 
-                "Pertanian", "Peternakan", "Psikologi", "Teknologi Pertanian", 
-                "Vokasi","Lainnya","Kontributor"
-              ]
-              );
+            $table->foreignIdFor(Faculty::class,'faculty');
             $table->enum('status',['sudah','belum']);
             $table->foreignIdFor(Donation::class,'donation');
             $table->char('code',6)->nullable();
@@ -33,14 +27,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone')->nullable();
-            $table->enum('faculty',[
-                "Biologi", "Ekonomi Bisnis", "Filsafat", "Fisipol", "Geografi", 
-                "Hukum", "Ilmu Budaya", "Kedokteran", "Kedokteran Gigi", 
-                "Kedokteran Hewan", "Kehutanan", "MIPA", "Pascasarjana", 
-                "Pertanian", "Peternakan", "Psikologi", "Teknologi Pertanian", 
-                "Vokasi","Lainnya","Kontributor"
-              ]
-              );
+            $table->foreignIdFor(Faculty::class,'faculty');
             $table->foreignIdFor(Donation::class,'donation');
             $table->char('code',6)->nullable();
             $table->timestamps();

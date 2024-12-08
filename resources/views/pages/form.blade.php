@@ -22,29 +22,29 @@
                             *satu orang akan mendapatkan 1 roti
                         </h1>
                     @endif
-                    <h1 class="text-3xl text-tosca font-medium text-center italic my-4">
-                        {{ implode(' ', str_split(session('kode'))) }}
+                    <h1 class="text-3xl text-white font-medium text-center italic my-4">
+                        {{ implode(' ', str_split(session('code'))) }}
                     </h1>
                     <a href="{{ route('hero.cancel') }}">
-                        <div class="m-auto bg-red-600 hover:bg-red-800 w-max rounded-md p-2 text-tosca">
+                        <div class="m-auto bg-red-600 hover:bg-red-800 w-max rounded-md p-2 text-white">
                             Batalkan
                         </div>
                     </a>
-                    <h1 class="text-xs text-tosca text-center italic mt-1">tunjukkan untuk menukarkan makanan</h1>
-                    <h1 class="text-xs text-tosca text-center italic mt-3">ikuti instagram kami</h1>
+                    <h1 class="text-xs text-white text-center italic mt-1">tunjukkan untuk menukarkan makanan</h1>
+                    <h1 class="text-xs text-white text-center italic mt-3">ikuti instagram kami</h1>
                     <a href="https://www.instagram.com/berbagibitesjogja/"
-                        class="text-xs text-center block text-tosca font-medium text-center italic">@berbagibitesjogja</a>
+                        class="text-xs text-center block text-white font-medium text-center italic">@berbagibitesjogja</a>
                 </div>
                 <div class="w-full rounded-lg bg-tosca mt-8 py-5 px-6">
-                    <h1 class="text-md text-tosca font-medium text-center italic mb-4">Informasi take
+                    <h1 class="text-md text-white font-medium text-center italic mb-4">Informasi take
                     </h1>
                     <a href="{{ $donation->maps }}"
-                        class="text-center text-tosca text-md italic font-medium rounded-md mt-3"><svg class="inline"
+                        class="text-center text-white text-md italic font-medium rounded-md mt-3"><svg class="inline"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg> {{ $donation->location }}</a>
-                    <h1 class="text-tosca text-md italic font-medium rounded-md mt-3"><svg class="inline mr-1"
+                    <h1 class="text-white text-md italic font-medium rounded-md mt-3"><svg class="inline mr-1"
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-clock-fill" viewBox="0 0 16 16">
                             <path
@@ -70,12 +70,12 @@
                             @if ($donation->remain > 0)
                                 <div class="w-full rounded-lg bg-white shadow-xl mt-4 py-5 px-6">
                                     <h1 class="text-lg text-tosca font-semibold text-center">RSVP Now</h1>
-                                    <form action="{{ route('form.store') }}" method="POST">
+                                    <form action="{{ route('hero.store') }}" method="POST">
                                         @csrf
                                         <input type="number" name="donation" value="{{ $donation->id }}" class="hidden">
                                         <input autocomplete="off" type="text" name="name" id=""
                                             class="w-full mt-6 focus:outline-none"
-                                            placeholder="name Lengkap" required>
+                                            placeholder="Nama Lengkap" required>
                                         <div class="w-full h-px bg-black mt-1"></div>
                                         <div class="relative w-full">
                                             <span class="absolute left-0 bottom-0 text-slate-600">+62</span>
@@ -87,30 +87,17 @@
                                         <div class="w-full h-px bg-black mt-1"></div>
                                         @error('phone')
                                             <p class="text-xs italic font-thin text-pink-200">Silahkan masukkan format
-                                                phone yang
+                                                telepon yang
                                                 benar</p>
                                         @enderror
                                         <select class="w-full text-slate-600 mt-6 focus:outline-none"
                                             placeholder="Nomor Whatsapp" name="faculty" required>
-                                            <option value="">faculty</option>
-                                            <option value="Biologi">Biologi</option>
-                                            <option value="Ekonomi Bisnis">Ekonomi Bisnis</option>
-                                            <option value="Filsafat">Filsafat</option>
-                                            <option value="Fisipol">Fisipol</option>
-                                            <option value="Geografi">Geografi</option>
-                                            <option value="Hukum">Hukum</option>
-                                            <option value="Ilmu Budaya">Ilmu Budaya</option>
-                                            <option value="Kedokteran">Kedokteran</option>
-                                            <option value="Kedokteran Gigi">Kedokteran Gigi</option>
-                                            <option value="Kedokteran Hewan">Kedokteran Hewan</option>
-                                            <option value="Kehutanan">Kehutanan</option>
-                                            <option value="MIPA">MIPA</option>
-                                            <option value="Pascasarjana">Pascasarjana</option>
-                                            <option value="Pertanian">Pertanian</option>
-                                            <option value="Peternakan">Peternakan</option>
-                                            <option value="Psikologi">Psikologi</option>
-                                            <option value="Teknologi Pertanian">Teknologi Pertanian</option>
-                                            <option value="Vokasi">Vokasi</option>
+                                            <option value="">Fakultas</option>
+                                            @foreach (App\Models\Faculty::all() as $item)
+                                                @if (!in_array($item->name,["Kontributor","Lainnya"]) )
+                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                @endif
+                                            @endforeach
                                         </select>
                                         <div class="w-full h-px bg-navy mt-1"></div>
                                         <input type="submit" value="Submit"
@@ -137,10 +124,10 @@
             @endif
         @else
             <div class="w-full rounded-lg bg-tosca mt-8 py-5 px-6">
-                <h1 class="text-xl text-tosca font-medium text-center italic">Maaf, belum ada food rescue hari ini</h1>
-                <h1 class="text-md text-tosca font-medium text-center italic mt-3">ikuti instagram kami</h1>
+                <h1 class="text-xl text-white font-medium text-center italic">Maaf, belum ada food rescue hari ini</h1>
+                <h1 class="text-md text-white font-medium text-center italic mt-3">ikuti instagram kami</h1>
                 <a href="https://www.instagram.com/berbagibitesjogja/"
-                    class="text-sm text-center block text-tosca font-medium text-center italic">@berbagibitesjogja</a>
+                    class="text-sm text-center block text-white font-medium text-center italic">@berbagibitesjogja</a>
             </div>
         @endif
     </div>

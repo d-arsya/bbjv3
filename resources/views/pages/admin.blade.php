@@ -12,7 +12,7 @@
             <h1 class="text-2xl text-white font-semibold text-center">Let's Rescue</h1>
             <form action="{{ route('volunteer.authenticate') }}" method="POST">
                 @csrf 
-                    <input autocomplete="off" type="text" name="email" id="" class="bg-tosca w-full text-slate-100 mt-6 focus:outline-none" placeholder="email">
+                    <input autocomplete="off" type="text" name="email" id="" class="bg-tosca w-full text-slate-100 mt-6 focus:outline-none" placeholder="Email">
                     <div class="w-full h-px bg-navy mt-1"></div>
                     <input autocomplete="off" type="password" name="password" id="" class="bg-tosca w-full text-slate-100 mt-6 focus:outline-none" placeholder="Password">
                     <div class="w-full h-px bg-navy mt-1"></div>

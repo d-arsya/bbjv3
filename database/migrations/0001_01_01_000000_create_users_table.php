@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Faculty;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,16 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->enum('faculty',[
-                "Biologi", "Ekonomi Bisnis", "Filsafat", "Fisipol", "Geografi", 
-                "Hukum", "Ilmu Budaya", "Kedokteran", "Kedokteran Gigi", 
-                "Kedokteran Hewan", "Kehutanan", "MIPA", "Pascasarjana", 
-                "Pertanian", "Peternakan", "Psikologi", "Teknologi Pertanian", 
-                "Vokasi","Lainnya","Kontributor"
-              ]
-              );
-            $table->enum('role',['super']);
-            $table->integer('point');
+            $table->foreignIdFor(Faculty::class,'faculty');
+            $table->enum('role',['super','core','staff']);
+            $table->integer('point')->default(0);
             $table->timestamps();
         });
 

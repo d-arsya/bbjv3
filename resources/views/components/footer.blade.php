@@ -15,6 +15,6 @@
     </svg>
     </div>
     <div class="mt-6">
-        <span class="text-gray-300 text-sm font-medium">Copyright © 2024 Berbagi Bites Jogja</span>
+        <span id="clickFooter" class="text-gray-300 text-sm font-medium">Copyright © 2024 Berbagi Bites Jogja</span>
     </div>
 </footer>

@@ -14,4 +14,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+    public function faculty(){
+        return $this->hasOne(Faculty::class,'id','faculty')->first();
+    }
 }
