@@ -1,10 +1,10 @@
 @php
     use Carbon\Carbon;
 @endphp
-@extends('layouts.main')
+@extends('layouts.form')
 @section('container')
     
-<div class="max-w-lg mx-auto px-8 mt-6">
+<div class="max-w-lg mx-auto mt-6">
     <div class="pt-12 h-screen">
         {{-- ada  --}}
         <h1 class="text-center text-4xl font-bold text-navy">Heroes</h1>
