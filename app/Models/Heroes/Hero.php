@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Heroes;
 
+use App\Models\Donation\Donation;
+use App\Models\Volunteer\Faculty;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Food extends Model
+class Hero extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $table = "foods";
     public function donation(){
         return $this->belongsTo(Donation::class,'donation','id')->first();
     }
-    public static function totalGram()
-    {
-        return self::where('unit', 'gr')->sum('weight');
+    public function faculty(){
+        return $this->hasOne(Faculty::class,'id','faculty')->first();
     }
 }

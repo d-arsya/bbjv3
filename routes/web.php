@@ -7,6 +7,8 @@ use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\VolunteerController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('test-email',[VolunteerController::class,'store']);
+
 Route::fallback(function () {
     return view('pages.coming');
 });

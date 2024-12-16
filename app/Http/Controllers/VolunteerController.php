@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Mail\VolunteerRegister;
+use App\Models\Volunteer\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class VolunteerController extends Controller
 {
@@ -19,7 +21,8 @@ class VolunteerController extends Controller
     }
     public function store(Request $request)
     {
-        
+        Mail::to(["email"=>"kamaluddin.arsyad17@gmail.com"])->send(new VolunteerRegister("kamaluddin.arsyad17@gmail.com","GATYUGAJDYU"));
+        // return view('mail.volunteer.register');
     }
     public function show(string $id)
     {

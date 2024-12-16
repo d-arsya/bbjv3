@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Donation;
-use App\Models\Sponsor;
+use App\Models\Donation\Donation;
+use App\Models\Donation\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;

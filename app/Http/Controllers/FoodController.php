@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Donation;
-use App\Models\Food;
+use App\Models\Donation\Donation;
+use App\Models\Donation\Food;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;

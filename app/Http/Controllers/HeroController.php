@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Backup;
-use App\Models\Donation;
-use App\Models\Hero;
+use App\Models\Heroes\Backup;
+use App\Models\Donation\Donation;
+use App\Models\Heroes\Hero;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;

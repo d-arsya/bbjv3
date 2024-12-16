@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Donation;
 
+use App\Models\Heroes\Hero;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

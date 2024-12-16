@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Sponsor;
+use App\Models\Donation\Sponsor;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('location');
             $table->string('maps');
             $table->text('notes')->nullable();
-            // $table->json('jatah');
             $table->enum('status',["aktif","selesai"]);
             $table->timestamps();
         });

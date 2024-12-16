@@ -80,8 +80,8 @@
     </div>
 </nav>
 <nav class="z-10 bg-white flex sticky top-0 md:hidden justify-between px-6 pb-6">
-    <a href="">
-        <img src="{{ asset('assets/biru.png') }}" class="w-12" alt="">
+    <a href="" class="flex items-center text-tosca text-2xl font-bold">
+        <img src="{{ asset('assets/biru.png') }}" class="w-12" alt="">Berbagi Bites Jogja
     </a>
     <button onclick="openSidebar()">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"

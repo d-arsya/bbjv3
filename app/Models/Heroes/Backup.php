@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Heroes;
 
+use App\Models\Donation\Donation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hero extends Model
+class Backup extends Model
 {
     use HasFactory;
     protected $guarded = [];

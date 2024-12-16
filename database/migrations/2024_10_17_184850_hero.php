@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Donation;
-use App\Models\Faculty;
+use App\Models\Donation\Donation;
+use App\Models\Volunteer\Faculty;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

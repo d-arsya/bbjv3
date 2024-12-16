@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\Faculty;
+use App\Models\Volunteer\Division;
+use App\Models\Volunteer\Faculty;
+use App\Models\Volunteer\Program;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,10 +16,11 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Program::class);
+            $table->foreignIdFor(Division::class);
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->foreignIdFor(Faculty::class,'faculty');
             $table->enum('role',['super','core','staff']);
             $table->integer('point')->default(0);
             $table->timestamps();

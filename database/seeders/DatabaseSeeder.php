@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Faculty;
-use App\Models\User;
+use App\Models\Volunteer\Faculty;
+use App\Models\Volunteer\Program;
+use App\Models\Volunteer\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -31,5 +32,8 @@ class DatabaseSeeder extends Seeder
         foreach ($this->faculties as $item) {
             Faculty::create(["name"=>$item]);
         }
+        Program::create([
+
+        ]);
     }
 }
